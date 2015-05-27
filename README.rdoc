@@ -1,0 +1,9 @@
+=rabbitmq-publisher
+
+This is a publisher app which send data to rabbitmq
+
+==Project Setup
+
+===Gems
+Install all the required gems:
+    bundle install
