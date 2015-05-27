@@ -11,9 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150527113724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
+  create_table "currencies", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.json     "rate"
+    t.boolean  "processed_by_consumer_1"
+    t.boolean  "processed_by_customer_2"
+    t.boolean  "processed_by_customer_3"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
 end
