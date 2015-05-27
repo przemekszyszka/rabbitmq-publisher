@@ -1,9 +1,15 @@
 =rabbitmq-publisher
 
-This is a publisher app which send data to rabbitmq
+This is a publisher app which will send data to rabbitmq
 
 ==Project Setup
 
 ===Gems
 Install all the required gems:
     bundle install
+
+===Database
+Copy the config/database.yml.sample file to config/database.yml:
+    cp config/database.yml.sample config/database.yml
+
+Adjust the contents of the file according to your needs.
