@@ -11,6 +11,7 @@ gem 'dotenv-rails'
 gem 'pg'
 gem 'bunny'
 gem 'rake'
+gem 'sneakers'
 
 group :development, :test do
   gem 'byebug'
