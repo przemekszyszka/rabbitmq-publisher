@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails'
 gem 'pg'
 gem 'bunny'
+gem 'rake'
 
 group :development, :test do
   gem 'byebug'
