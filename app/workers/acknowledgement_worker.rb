@@ -11,13 +11,13 @@ class AcknowledgementWorker
     acknowledgement = JSON.parse(message)
 
     begin
-      currency = Currency.find(message['uuid'])
+      currency = Currency.find(acknowledgement['uuid'])
     rescue ActiveRecord::RecordNotFound
       (@retries -= 1).zero? ? reject! : requeue!
     end
 
     processed_by_consumer = "processed_by_consumer_#{acknowledgement['id']}"
-    currency.update_attributes(processed_by_consumer, true)
+    currency.update_attributes({ processed_by_consumer => true })
     ack!
   end
 end
